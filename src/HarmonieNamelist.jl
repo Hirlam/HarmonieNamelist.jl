@@ -1,6 +1,5 @@
 module HarmonieNamelist
 
-using JSONSchema, JSONSchema
 export schema2namelist
 
 
