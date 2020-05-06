@@ -10,10 +10,10 @@
   ],
   "properties": {  
     "NAM_SSOn": {
-      "$ref": "../src/jsonschema/nam_sson.schema.json"
+      "$ref": "jsonschema/nam_sson.schema.json"
     },
     "NAM_TEB": {
-      "$ref": "../src/jsonschema/nam_teb.schema.json"
+      "$ref": "jsonschema/nam_teb.schema.json"
     }
   }
 }
