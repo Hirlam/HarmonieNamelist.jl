@@ -2,7 +2,6 @@
   "type": "object",
   "title": "NAM_TEB",
   "description": "Namelist for town energy balance",
-  "additionalProperties": false,
   "properties": {
     "NROAD_LAYER": {
       "type": "integer",

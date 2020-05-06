@@ -1,11 +1,7 @@
 {
   "type": "object",
   "title": "NAM_SSOn",
-  "description": "Namelist for roughness parameterization for orography",
-  "additionalProperties": false,
-  "required": [
-    "CROUGH"
-  ],
+  "description": "Namelist for roughness parameterization for orography",  
   "properties": {
     "CROUGH": {
       "type": "string",
