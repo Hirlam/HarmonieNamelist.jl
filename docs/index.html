@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Harmonie configuration editor</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsive viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!-- Fontawesome-->
+  <script scr="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/js/font-awesome.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <!-- Bootstrap 4.3.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
+  
+  <!-- Optional --
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-theme.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  --> 
+
+  <!-- Handlebars -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.min.js"></script>
+
+  <!-- Flatpickr -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.1/flatpickr.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.1/flatpickr.min.css" />
+
+  <!-- JSON-Editor -->
+  <script src="https://cdn.jsdelivr.net/npm/@json-editor/json-editor@latest/dist/jsoneditor.min.js"></script>
+  <style type="text/css">
+    body {
+      margin: 1em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="form"></div>
+  <script type="text/javascript">
+    // Handlebars helper for displaying timestamps in human frindly format
+    Handlebars.registerHelper("TimeStampToDateTime", function (ts) {
+      return ts ? new Date(ts * 1000) : 'empty';
+    });
+
+    //$.getJSON("../../test/config/config_exp.json",config_exp_ready)
+
+    //function config_exp_ready(config_exp_data) {
+    //function config_exp_ready() {
+
+    //$.getJSON("eps.schema.json",schemacallback)  
+    $.getJSON("harmonie.schema.json", schemacallback)
+
+    function schemacallback(schema_data) {
+      var options = {
+        iconlib: 'fontawesome4',
+        theme: 'bootstrap4',
+        template: 'handlebars',
+        ajax: true,
+        required_by_default: true,
+        display_required_only: true,
+        schema: schema_data
+
+
+      };
+
+      var element = document.getElementById('form');
+      var editor = new JSONEditor(element, options);
+      //}
+    } 
+  </script>
+  <!-- json output could go here  
+  <div class='span4 col-md-4 columns four large-4 col s4'>
+       <textarea id='output' style='width: 100%; height: 300px; font-family: monospace;' class='form-control'></textarea>
+  </div>
+-->
+
+</body>
+
+</html>

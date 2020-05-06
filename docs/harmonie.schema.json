@@ -1,0 +1,19 @@
+{
+  "$id": "./harmonie.schema.json",
+  "$schema" : "http://json-schema.org/schema#",
+  "title": "Harmonie namelists",
+  "format": "categories",
+  "type": "object",
+  "required": [   
+    "NAM_SSOn",
+    "NAM_TEB" 
+  ],
+  "properties": {  
+    "NAM_SSOn": {
+      "$ref": "../src/jsonschema/nam_sson.schema.json"
+    },
+    "NAM_TEB": {
+      "$ref": "../src/jsonschema/nam_teb.schema.json"
+    }
+  }
+}
