@@ -15,7 +15,7 @@ julia --project -e 'using Pkg; Pkg.instantiate()'
 
 ## Conversion to namelist
 
-To create namelist with comments and urls for 
+To create namelist with comments and urls
 
 ```bash
 julia --project scr/schema2namelist.jl docs/jsonschema/*
