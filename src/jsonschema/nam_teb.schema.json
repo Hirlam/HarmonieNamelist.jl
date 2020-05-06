@@ -1,0 +1,96 @@
+{
+  "type": "object",
+  "title": "NAM_TEB",
+  "description": "Namelist for town energy balance",
+  "additionalProperties": false,
+  "properties": {
+    "NROAD_LAYER": {
+      "type": "integer",
+      "description": "number of layers in roads",
+      "default": 5
+    },
+    "NROOF_LAYER": {
+      "type": "integer",
+      "description": "number of layers in roofs",
+      "default": 5
+    },
+    "NWALL_LAYER": {
+      "type": "integer",
+      "description": "number of layers in walls",
+      "default": 5
+    },
+    "NFLOOR_LAYER": {
+      "type": "integer",
+      "description": "number of layers in floors",
+      "default": 5
+    },
+    "NTEB_PATCH": {
+      "type": "integer",
+      "description": "number of TEB patches (corresponding to the roads orientations)",
+      "default": 1
+    },
+    "CBEM": {
+      "type": "string",
+      "description": "option for the building energy model",
+      "enum": [
+        "DEF",
+        "BEM"
+      ],
+      "enum_titles": [
+        "DEF, default version force-restore model from Masson et al. 2002",
+        "BEM, Building Energy Model Bueno et al. 2011"
+      ],
+      "minLength": 3,
+      "maxLength": 3,
+      "default": "DEF"
+    },
+    "CCOOL_COIL": {
+      "type": "string",
+      "description": "type of cooling coil",
+      "enum": [
+        "IDEAL ",
+        "DXCOIL"
+      ],
+      "minLength": 6,
+      "maxLength": 6,
+      "default": "IDEAL "
+    },
+    "CHEAT_COIL": {
+      "type": "string",
+      "description": "type of heating coil",
+      "enum": [
+        "IDEAL ",
+        "FINCAP"
+      ],
+      "minLength": 6,
+      "maxLength": 6,
+      "default": "IDEAL "
+    },
+    "LAUTOSIZE": {
+      "type": "boolean",
+      "description": "flag to activate autosize calculations",
+      "default": false
+    },
+    "LGREENROOF": {
+      "type": "boolean",
+      "description": "logical to call ISBA from TEb for GREENROOF",
+      "default": false
+    },
+    "LHYDRO": {
+      "type": "boolean",
+      "description": "urban subsoil and hydrology processes (not implemented yet)",
+      "default": false
+    },
+    "LSOLAR_PANEL": {
+      "type": "boolean",
+      "description": "solar panels on roofs",
+      "default": false
+    }
+  },
+  "links": [
+    {
+      "rel": "4.1.6. Namelist NAM_TEB",
+      "href": "http://www.umr-cnrm.fr/surfex/spip.php?article236"
+    }
+  ]
+}
