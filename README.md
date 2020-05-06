@@ -18,13 +18,13 @@ julia --project -e 'using Pkg; Pkg.instantiate()'
 To create namelist with comments and urls for 
 
 ```bash
-julia --project scr/schema2namelist.jl src/jsonschema/*
+julia --project scr/schema2namelist.jl docs/jsonschema/*
 ```
 
 ## Example
 
 ```bash
-julia --project scr/schema2namelist.jl src/jsonschema/nam_teb.schema.json 
+julia --project scr/schema2namelist.jl docs/jsonschema/nam_teb.schema.json 
 
 # Namelist for town energy balance
 # 4.1.6. Namelist NAM_TEB
